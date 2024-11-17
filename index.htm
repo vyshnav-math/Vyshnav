@@ -8,13 +8,8 @@
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<script type="text/javascript"
-  src="https://d3eoax9i5htok0.cloudfront.net/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-</script>
+
 
 <style>
 
@@ -40,7 +35,7 @@ body
 	top:250px;
 	}
 
-#line
+.line
 	{
 	height:3px;
 	background-color:#003366;
@@ -61,10 +56,10 @@ body
 	{
 	position:absolute;
 	left:520px;
-        Bottom:130px;
-        Width:500px;
-        height:50px;
-        background-color:#F5F5F5;
+	top:600px;
+	Width:500px;
+	height:50px;
+	background-color:#F5F5F5;
 
 	}
 
@@ -110,7 +105,7 @@ body
 	}
 
 
-footer 
+#footer 
 	{
 	background-color: #CCCCFF;
 	text-align: center;
@@ -132,9 +127,42 @@ a:link
 
 </head>
 
-<body onload="set()">
+<body onresize="myFunction()">
 
-	<div id="icons">
+
+	<div class="tab" style="position:absolute;left:460px;top:100px;">
+  		<button class="tablinks" >About</button>
+  		<button class="tablinks" >Research</button>
+  		<button class="tablinks" >Papers</button>
+  		<button class="tablinks" >Resources</button>
+ 		 <button class="tablinks" >Blog</button>
+	</div>
+
+
+	<div id="homeimage"; >
+
+		<img id="me"; src="IMG-20240414-WA0049.jpg" style="width:200px">
+
+	</div>
+
+	<div class="line"; style="position:absolute;left:420px;top:260px;width:600px;opacity:1"> 
+	</div>
+
+	<div id="hometext";>
+
+		<h1  >Vyshnav V</h1>
+
+		<p id="p1"; style="font-size: 17px; line-height: 1.5; position:relative; top:10px;left:1px">
+			 I am a PhD student in the department of mathematics at Indian Institute of Science (IISc) Bangalore, working with <a href="https://pbharathwaj.github.io/" target="_blank"> Prof. Bharathwaj Palvannan </a>. My primary interest is in Algebraic Number theory. 
+		</p>
+
+	</div>
+
+	<div class="line"; style="position:absolute;left:420px;top:490px;width:600px;opacity:1"> 
+	</div>
+
+
+	<div id="icons";>
 
 		<i class="fa fa-envelope" style="font-size:36px;position:absolute; left:60px;"></i>
 
@@ -147,39 +175,10 @@ a:link
 	</div>
 
 
-	<div id="homeimage"; >
 
-		<img id="me"; src="IMG-20240414-WA0049.jpg" style="width:200px">
-
-	</div>
-
-	<div id="line"; style="position:absolute;left:420px;top:260px;width:600px;opacity:1"> 
-	</div>
-
-	<div id="hometext";>
-
-		<h1 style="color:#003366;">Vyshnav V</h1>
-		<p style="font-size: 17px; line-height: 1.5; position:relative; top:10px;">
-			 I am a PhD student in the department of mathematics at Indian Institute of Science (IISc) Bangalore, working with <a href="https://pbharathwaj.github.io/" target="_blank"> Prof. Bharathwaj Palvannan </a>. My primary interest is in Algebraic Number theory. 
-		</p>
-
-	</div>
-
-	<div id="line"; style="position:absolute;left:420px;top:490px;width:600px;opacity:1"> 
-	</div>
-
-	<div class="tab" style="position:absolute;left:460px;top:100px;">
-  		<button class="tablinks" >About</button>
-  		<button class="tablinks" >Research</button>
-  		<button class="tablinks" >Papers</button>
-  		<button class="tablinks" >Resources</button>
- 		 <button class="tablinks" >Blog</button>
-	</div>
-
-
-	<footer>
+	<div id="footer">
  		 <p> <b> My research is supported by NBHM </b></p>
-	</footer>
+	</div>
 
 
 </body>
@@ -187,16 +186,148 @@ a:link
 
 <script>
 
+
+	if(ch>600)
+		{
+
+		var ch=window.innerHeight;
+		var cw= window.innerWidth;
+
+		var size=Math.floor(ch*100/778);
+		var s=size+"px";
+		const collection = document.getElementsByClassName("tab");
+		collection[0].style.top =s;
+
+		size=Math.floor(cw*460/1440);
+		s=size+"px";
+		collection[0].style.left =s;
+
+		size=Math.floor(ch*250/778);
+		s=size+"px";
+		document.getElementById("homeimage").style.top=s;
+
+
+		size=Math.floor(cw*250/1440);
+		s=size+"px";
+		document.getElementById("homeimage").style.left=s;
+
+
+
+		size=Math.floor(ch*260/778);
+		s=size+"px";
+		const collec = document.getElementsByClassName("line");
+		collec[0].style.top =s;
+
+		size=Math.floor(cw*420/1440);
+		s=size+"px";
+		collec[0].style.left =s;
+
+		size=Math.floor(ch*260/778+490-260);
+		s=size+"px";
+		collec[1].style.top =s;
+
+		size=Math.floor(cw*420/1440);
+		s=size+"px";
+		collec[1].style.left =s;
+
+		size=Math.floor(ch*265/778);
+		s=size+"px";
+		document.getElementById("hometext").style.top=s;
+
+		size=Math.floor(cw*500/1440);
+		s=size+"px";
+		document.getElementById("hometext").style.left=s;
+
+
+
+		size=Math.floor(ch*600/778);
+		s=size+"px";
+		document.getElementById("icons").style.top=s;
+
+		size=Math.floor(cw*520/1440);
+		s=size+"px";
+		document.getElementById("icons").style.left=s;
+
+
+		}
+
+
+</script>
+
+<script>
+
+function myFunction() 
+	
+	{
 	var ch=window.innerHeight;
 	var cw= window.innerWidth;
-	var size=100;
-	var s=size+"px";
 
-		function set()
-			{
-        
+	if(ch>600)
+		{
 
-			}
+		var ch=window.innerHeight;
+		var cw= window.innerWidth;
+
+		var size=Math.floor(ch*100/778);
+		var s=size+"px";
+		const collection = document.getElementsByClassName("tab");
+		collection[0].style.top =s;
+
+		size=Math.floor(cw*460/1440);
+		s=size+"px";
+		collection[0].style.left =s;
+
+		size=Math.floor(ch*250/778);
+		s=size+"px";
+		document.getElementById("homeimage").style.top=s;
+
+
+		size=Math.floor(cw*250/1440);
+		s=size+"px";
+		document.getElementById("homeimage").style.left=s;
+
+
+
+		size=Math.floor(ch*260/778);
+		s=size+"px";
+		const collec = document.getElementsByClassName("line");
+		collec[0].style.top =s;
+
+		size=Math.floor(cw*420/1440);
+		s=size+"px";
+		collec[0].style.left =s;
+
+		size=Math.floor(ch*260/778+490-260);
+		s=size+"px";
+		collec[1].style.top =s;
+
+		size=Math.floor(cw*420/1440);
+		s=size+"px";
+		collec[1].style.left =s;
+
+		size=Math.floor(ch*265/778);
+		s=size+"px";
+		document.getElementById("hometext").style.top=s;
+
+		size=Math.floor(cw*500/1440);
+		s=size+"px";
+		document.getElementById("hometext").style.left=s;
+
+
+
+		size=Math.floor(ch*600/778);
+		s=size+"px";
+		document.getElementById("icons").style.top=s;
+
+		size=Math.floor(cw*520/1440);
+		s=size+"px";
+		document.getElementById("icons").style.left=s;
+
+		}
+
+	}
+
+
 </script>
 
 </html>
