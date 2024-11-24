@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Vyshnav V</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        /* General body styling */
+        body {
+            background-color: #F9F9F9;
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        /* Tabs */
+        .tab {
+            display: flex;
+            justify-content: center;
+            background-color: #DCD0FF;
+            padding: 10px 0;
+        }
+
+        .tab button {
+            background-color: #E6E6FA;
+            border: none;
+            margin: 0 10px;
+            padding: 12px 20px;
+            font-size: 16px;
+            color: #003366;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 4px;
+        }
+
+        .tab button:hover {
+            background-color: #bdb8ff;
+        }
+
+        .tab button.active {
+            background-color: #A399FF;
+            color: white;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        #homeimage img {
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            width: 150px;
+            height: 150px;
+            margin: 20px;
+        }
+
+        #hometext {
+            text-align: center;
+        }
+
+        #hometext h1 {
+            color: #003366;
+            font-size: 28px;
+        }
+
+        #hometext p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333333;
+        }
+
+        #hometext a {
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #hometext a:hover {
+            text-decoration: underline;
+        }
+
+        /* Icons Section */
+        #icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        #icons i {
+            font-size: 36px;
+            color: #003366;
+            cursor: pointer;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        #icons i:hover {
+            transform: scale(1.1);
+            color: #A399FF;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #CCCCFF;
+            color: #003366;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 16px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab {
+                flex-wrap: wrap;
+            }
+
+            .tab button {
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body onresize="myFunction()">
+
+    <div class="tab">
+        <button class="tablinks">About</button>
+        <button class="tablinks">Research</button>
+        <button class="tablinks">Papers</button>
+        <button class="tablinks">Resources</button>
+        <button class="tablinks">Blog</button>
+    </div>
+
+    <div class="main-content">
+        <div id="homeimage">
+            <img src="IMG-20240414-WA0049.jpg" alt="Profile Picture">
+        </div>
+        <div id="hometext">
+            <h1>Vyshnav V</h1>
+            <p>
+                I am a PhD student in the department of mathematics at the Indian Institute of Science (IISc)
+                Bangalore, working with
+                <a href="https://pbharathwaj.github.io/" target="_blank">Prof. Bharathwaj Palvannan</a>.
+                My primary interest is in Algebraic Number Theory.
+            </p>
+        </div>
+    </div>
+
+    <div id="icons">
+        <i class="fa fa-envelope" title="Email"></i>
+        <i class="fa fa-phone" title="Phone"></i>
+        <i class="fa fa-file-text-o" title="Documents"></i>
+        <i class="fa fa-map-marker" title="Location"></i>
+    </div>
+
+    <footer>
+        <p><b>My research is supported by NBHM</b></p>
+    </footer>
+</body>
+
+<script>
+
+	var ch=window.innerHeight;
+	var cw= window.innerWidth;
+
+	if(ch>600 && cw>900)
+		{
+
+		location.replace("index.html");
+		}
+
+</script>
+
+<script>
+
+
+
+function myFunction() 
+	{
+
+	var ch=window.innerHeight;
+	var cw= window.innerWidth;
+
+	if(ch>600 && cw>900)
+		{
+
+		location.replace("index.html");
+		}
+	
+	}
+
+
+</script>
+
+</html>
